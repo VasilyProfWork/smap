@@ -1122,6 +1122,9 @@
         const script_anchors = document.querySelectorAll('a[href*="#"]');
         for (let anchor of script_anchors) anchor.addEventListener("click", (function(e) {
             e.preventDefault();
+            lock.classList.remove("lock");
+            iconMenu.classList.remove("menu-open");
+            menuBody.classList.remove("menu-open");
             const blockID = anchor.getAttribute("href").substr(1);
             document.getElementById(blockID).scrollIntoView({
                 behavior: "smooth",
